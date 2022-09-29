@@ -4,7 +4,7 @@ import com.mhc3.mhc3_3tory.config.exception.BaseException;
 import com.mhc3.mhc3_3tory.config.response.BaseResponse;
 
 import com.mhc3.mhc3_3tory.src.model.GetResTestResult;
-import com.mhc3.mhc3_3tory.src.model.TemplateInterface;
+import com.mhc3.mhc3_3tory.src.model.TemplateModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -22,8 +22,8 @@ public class StoryController {
 
 
     @GetMapping("/template")
-    public BaseResponse<ArrayList<TemplateInterface>> getTemplateList() {
-        ArrayList<TemplateInterface> result = storyProvider.getTemplateList();
+    public BaseResponse<ArrayList<TemplateModel>> getTemplateList() {
+        ArrayList<TemplateModel> result = storyProvider.getTemplateList();
         return new BaseResponse<>(result);
 
     }

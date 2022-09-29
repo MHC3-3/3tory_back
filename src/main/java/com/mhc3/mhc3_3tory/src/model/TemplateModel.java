@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class TemplateModel implements TemplateInterface {
+public class TemplateModel {
     String temp;
     int id;
     int nextId;
