@@ -39,7 +39,7 @@ public class StoryDao {
                             rk.getString("partner_title"),
                             rk.getString("partner_img")
                     ), programId);
-            GetResTestResult getResTestResult = this.jdbcTemplate.queryForObject(getResTestResultQuery,
+            GetResTestResult testResult = this.jdbcTemplate.queryForObject(getResTestResultQuery,
                     (rs, rowNum) -> new GetResTestResult(
                             rs.getInt("id"),
                             rs.getString("name"),
@@ -49,16 +49,21 @@ public class StoryDao {
                             partnerModel
                     ), programId
             );
-            return getResTestResult;
+            return testResult;
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
             throw new BaseException(DATABASE_ERROR);
         }
     }
 
-    public void updateCount(int programId) {
-        String updateCountQuery = "UPDATE Programs SET Programs.count = (SELECT * FROM (SELECT p.count FROM Programs as p WHERE p.id =?) as a)+1 WHERE Programs.id =?;";
-        Object[] updateCountParams = new Object[]{programId,programId};
-        this.jdbcTemplate.update(updateCountQuery, updateCountParams);
+    public void updateCount(int programId) throws BaseException {
+        try {
+            String updateCountQuery = "UPDATE Programs SET Programs.count = (SELECT * FROM (SELECT p.count FROM Programs as p WHERE p.id =?) as a)+1 WHERE Programs.id =?;";
+            Object[] updateCountParams = new Object[]{programId,programId};
+            this.jdbcTemplate.update(updateCountQuery, updateCountParams);
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            throw new BaseException(DATABASE_ERROR);
+        }
     }
 }

@@ -182,7 +182,7 @@ public enum BaseTemplate{
             12,
             13,
             "brown",
-            "담지",
+            "토리",
             "저희 아메리카노랑 수제 샌드위치 2개 주세요!",
             true,
             false,
@@ -459,7 +459,7 @@ public enum BaseTemplate{
     Page31(
             "story",
             31,
-            32,
+            0,
             "gray",
             null,
             "보람찬 토리의 하루가 끝이 났습니다.",

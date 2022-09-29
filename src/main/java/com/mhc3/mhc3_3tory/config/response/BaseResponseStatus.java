@@ -13,6 +13,13 @@ public enum BaseResponseStatus {
      * 2000 : Request오류
      */
     REQUEST_ERROR(false, 2000, "입력값을 확인해주세요."),
+    INVALID_QUESTION_NUMBER(false,2010,"질문번호가 잘못되었습니다."),
+    INVALID_ANSWER_Q1(false,2011,"Q1에 입력가능한 답안은 1,2,3 입니다."),
+    INVALID_ANSWER_Q2(false,2012,"Q2에 입력가능한 답안은 1,2,3 입니다."),
+    INVALID_ANSWER_Q3(false,2013,"Q3에 입력가능한 답안은 1,2,3,4입니다."),
+    INVALID_ANSWER_Q4(false,2014,"Q4에 입력가능한 답안은 1,2 입니다."),
+    INVALID_ANSWER_Q5(false,2015,"Q5에 입력가능한 답안은 1,2,3 입니다."),
+    INVALID_ANSWER_Q6(false,2016,"Q6에 입력가능한 답안은 1,2 입니다."),
 
     /**
      * 4000 : Database, Server오류

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
+import static com.mhc3.mhc3_3tory.config.response.BaseResponseStatus.REQUEST_ERROR;
+
 @RestController
 @RequestMapping("/api")
 public class StoryController {
@@ -31,6 +33,10 @@ public class StoryController {
     @GetMapping("/result")
     public BaseResponse<GetResTestResult> getTestResult(@RequestParam String code) {
         try {
+            // validation : 6개의 정답
+            if(code.length()!=6){
+                throw new BaseException(REQUEST_ERROR);
+            }
             GetResTestResult getResTestResult = storyService.getTestResult(code);
             return new BaseResponse<>(getResTestResult);
         } catch (BaseException exception){
