@@ -1,6 +1,7 @@
 package com.mhc3.mhc3_3tory.src;
 
 import com.mhc3.mhc3_3tory.config.S3.S3Service;
+import com.mhc3.mhc3_3tory.config.exception.BaseException;
 import com.mhc3.mhc3_3tory.src.model.BaseTemplate;
 import com.mhc3.mhc3_3tory.src.model.TemplateModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,11 @@ public class StoryProvider {
     }
 
     ArrayList<TemplateModel> getTemplateList() {
+
         ArrayList<TemplateModel> templateList = new ArrayList<>();
         for (var baseTemplate : BaseTemplate.values()) {
             String backGroundImg = null;
-            if(baseTemplate.isHaveImg() == true) {
+            if (baseTemplate.isHaveImg()) {
                 backGroundImg = s3Service.getThumbnailPath("pageImg/page" + baseTemplate.getId() + ".png");
             }
             TemplateModel template = new TemplateModel(
