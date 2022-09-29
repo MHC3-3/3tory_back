@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
-public class templateVersion1 implements templateInterface{
+public class TemplateModel implements TemplateInterface {
     String temp;
     int id;
     int nextId;
@@ -17,4 +19,7 @@ public class templateVersion1 implements templateInterface{
     String text;
     Boolean hidden;
     Boolean isLast;
+    String number;
+    String question;
+    List<String> answer;
 }
