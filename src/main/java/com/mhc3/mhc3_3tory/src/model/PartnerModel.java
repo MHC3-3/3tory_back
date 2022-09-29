@@ -10,5 +10,6 @@ import lombok.Setter;
 public class PartnerModel {
     int partnerId;
     String partnerName;
+    String partnerTitle;
     String partnerImg;
 }

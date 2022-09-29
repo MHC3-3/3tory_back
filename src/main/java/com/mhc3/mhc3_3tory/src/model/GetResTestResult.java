@@ -10,6 +10,7 @@ import lombok.Setter;
 public class GetResTestResult {
     int id;
     String name;
+    String title;
     String description;
     String resultToryImg;
     PartnerModel partnerModel;
