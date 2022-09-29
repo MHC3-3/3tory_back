@@ -28,5 +28,15 @@ public class StoryController {
 
     }
 
+    @GetMapping("/result")
+    public BaseResponse<GetResTestResult> getTestResult(@RequestParam String code) {
+        try {
+            GetResTestResult getResTestResult = storyService.getTestResult(code);
+            return new BaseResponse<>(getResTestResult);
+        } catch (BaseException exception){
+            return new BaseResponse<>(exception.getStatus());
+        }
+    }
+
 
 }
