@@ -20,7 +20,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page2(
             "story",
@@ -33,7 +34,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page3(
             "story",
@@ -46,7 +48,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page4(
             "question",
@@ -63,7 +66,8 @@ public enum BaseTemplate{
                     "흥겨운 재즈나 클래식",
                     "시끄러운 기본 알림음",
                     "좋아하는 아이돌 노래"
-            )
+            ),
+            true
     ),
     Page5(
             "story",
@@ -76,7 +80,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page6(
             "question",
@@ -93,7 +98,8 @@ public enum BaseTemplate{
                     "모닝 커피는 국룰! 커피를 마신다",
                     "부지런한 토리, 아침 운동을 간다",
                     "여유롭게 침대에서 뒹굴거린다"
-            )
+            ),
+            true
     ),
     Page7(
             "story",
@@ -106,7 +112,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page8(
             "question",
@@ -124,7 +131,8 @@ public enum BaseTemplate{
                     "유튜버의 리얼한 홈카페 브이로그",
                     "짬내서 할 수 있는 간단 스트레칭",
                     "예능 하이라이트 모음 영상"
-            )
+            ),
+            true
     ),
     Page9(
             "story",
@@ -137,7 +145,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            false
     ),
     // 10 : 열심히 가는 중
     Page10(
@@ -151,7 +160,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page11(
             "story",
@@ -164,7 +174,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page12(
             "story",
@@ -177,7 +188,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page13(
             "story",
@@ -190,7 +202,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page14(
             "story",
@@ -203,7 +216,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            false
     ),
     Page15(
             "story",
@@ -216,7 +230,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page16(
             "question",
@@ -232,7 +247,8 @@ public enum BaseTemplate{
             Arrays.asList(
                     "나 춤추는 거 완전 좋아하지~",
                     "아니 나는 춤추는 거 안 좋아해..."
-            )
+            ),
+            true
     ),
     Page17(
             "story",
@@ -245,7 +261,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page18(
             "question",
@@ -262,7 +279,8 @@ public enum BaseTemplate{
                     "활동적으로 시간을 보내면서 잡생각을 떨쳐내는 것 같아",
                     "신나는 노래를 들으면 기분이 좋아져",
                     "집에서 혼자만의 시간을 가지면서 에너지를 충전해"
-            )
+            ),
+            true
     ),
     Page19(
             "story",
@@ -275,7 +293,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            false
     ),
     Page20(
             "story",
@@ -288,7 +307,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page21(
             "story",
@@ -301,7 +321,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     )
     ,Page22(
             "story",
@@ -314,7 +335,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     // 23 : 계단 올라가는 이미지
     Page23(
@@ -328,7 +350,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     // 24 : 2층 구경하는 이미지
     Page24(
@@ -342,7 +365,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page25(
             "story",
@@ -355,7 +379,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page26(
             "story",
@@ -371,7 +396,8 @@ public enum BaseTemplate{
             Arrays.asList(
                     "무언가를 배우는 게 좋아. 성취감 뿜뿜!",
                     "이것저것 복잡한 건 싫어. 자유롭게 표현하고 즐기는 게 좋아~"
-            )
+            ),
+            true
     ),
     // 27 : 계단을 내려오는 토리랑 담지
     Page27(
@@ -385,7 +411,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page28(
             "story",
@@ -398,7 +425,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            false
     ),
     Page29(
             "story",
@@ -411,7 +439,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page30(
             "story",
@@ -424,7 +453,8 @@ public enum BaseTemplate{
             false,
             null,
             null,
-            null
+            null,
+            true
     ),
     Page31(
             "story",
@@ -437,7 +467,8 @@ public enum BaseTemplate{
             true,
             null,
             null,
-            null
+            null,
+            false
     );
 
     /**
@@ -466,8 +497,9 @@ public enum BaseTemplate{
     private final String number;
     private final String question;
     private final List<String> answer;
+    private boolean haveImg;
 
-    private BaseTemplate(String temp, int id, int nextId, String color, String who, String text, Boolean hidden, Boolean isLast, String number, String question, List<String> answer) {
+    private BaseTemplate(String temp, int id, int nextId, String color, String who, String text, Boolean hidden, Boolean isLast, String number, String question, List<String> answer, boolean haveImg) {
         this.temp = temp;
         this.id = id;
         this.nextId = nextId;
@@ -479,6 +511,7 @@ public enum BaseTemplate{
         this.number = number;
         this.question = question;
         this.answer = answer;
+        this.haveImg = haveImg;
     }
 
 }

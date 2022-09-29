@@ -20,7 +20,10 @@ public class StoryProvider {
     ArrayList<TemplateModel> getTemplateList() {
         ArrayList<TemplateModel> templateList = new ArrayList<>();
         for (var baseTemplate : BaseTemplate.values()) {
-            String backGroundImg = s3Service.getThumbnailPath("pageImg/page" + baseTemplate.getId() + ".png");
+            String backGroundImg = null;
+            if(baseTemplate.isHaveImg() == true) {
+                backGroundImg = s3Service.getThumbnailPath("pageImg/page" + baseTemplate.getId() + ".png");
+            }
             TemplateModel template = new TemplateModel(
                     baseTemplate.getTemp(),
                     baseTemplate.getId(),
