@@ -12,16 +12,15 @@ import static com.mhc3.mhc3_3tory.config.response.BaseResponseStatus.DATABASE_ER
 public class StoryService {
 
     private final StoryDao storyDao;
-    private static StoryAlgorithm storyAlgorithm = null;
 
     @Autowired
-    public StoryService(StoryDao storyDao, StoryAlgorithm storyAlgorithm) {
+    public StoryService(StoryDao storyDao) {
         this.storyDao = storyDao;
-        this.storyAlgorithm = storyAlgorithm;
     }
 
     public GetResTestResult getTestResult(String code) throws BaseException {
         try {
+            StoryAlgorithm storyAlgorithm = new StoryAlgorithm();
             int programId = storyAlgorithm.calculateResult(code, 6);
             GetResTestResult testResult = storyDao.getTestResult(programId);
             return testResult;

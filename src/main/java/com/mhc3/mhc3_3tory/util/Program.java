@@ -6,15 +6,18 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Program {
+    int id;
+    String name;
     float score;
-    int count;
 
-    Program(){
+    Program(int id, String name){
+        this.id = id;
+        this.name = name;
         this.score = 0.0f;
-        this.count = 0;
     }
 
     void addScore(float weight) {
         this.score = this.score + weight;
     }
+
 }

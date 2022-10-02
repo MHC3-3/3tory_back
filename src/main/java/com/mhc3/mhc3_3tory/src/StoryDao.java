@@ -26,7 +26,7 @@ public class StoryDao {
                     "from Programs where id=?;";
 //        int getResTestResultParam = programId;
 
-            String partnerModelQuery = "select id as partner_id, name as partner_name, title as partner_title, image as partner_img " +
+            String partnerModelQuery = "select id as partner_id, name as partner_name, title as partner_title, partner_img " +
                     "from Programs where partner_id=?;";
 //        int partnerModelParam = programId;
 
