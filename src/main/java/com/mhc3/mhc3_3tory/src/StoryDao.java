@@ -23,7 +23,7 @@ public class StoryDao {
 
     public GetResTestResult getTestResult(int programId) throws BaseException {
         try {
-            String getResTestResultQuery = "select id, name, title, description, image " +
+            String getResTestResultQuery = "select id, name, title, description, count, image " +
                     "from Programs where id=?;";
 
             String partnerModelQuery = "select id as partner_id, name as partner_name, title as partner_title, partner_img " +
@@ -42,6 +42,7 @@ public class StoryDao {
                             rs.getString("name"),
                             rs.getString("title"),
                             rs.getString("description"),
+                            rs.getInt("count"),
                             rs.getString("image"),
                             partnerModel
                     ), programId
@@ -55,7 +56,7 @@ public class StoryDao {
 
     public GetResTestResult getResultData(int programId) throws BaseException {
         try {
-            String getResTestResultQuery = "select id, name, title, description, image " +
+            String getResTestResultQuery = "select id, name, title, description, count, image " +
                     "from Programs where id=?;";
 
             String partnerModelQuery = "select id as partner_id, name as partner_name, title as partner_title, partner_img " +
@@ -74,6 +75,7 @@ public class StoryDao {
                             rs.getString("name"),
                             rs.getString("title"),
                             rs.getString("description"),
+                            rs.getInt("count"),
                             rs.getString("image"),
                             partnerModel
                     ), programId

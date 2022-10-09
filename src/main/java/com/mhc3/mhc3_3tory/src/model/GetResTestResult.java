@@ -12,6 +12,7 @@ public class GetResTestResult {
     String name;
     String title;
     String description;
+    int count;
     String resultToryImg;
     PartnerModel partnerModel;
 }
