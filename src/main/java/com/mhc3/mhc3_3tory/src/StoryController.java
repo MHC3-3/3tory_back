@@ -85,15 +85,16 @@ public class StoryController {
 
     // 프로그램 카운트
     @PostMapping("/count")
-    public BaseResponse<String> countProgram (@RequestParam Integer id, @RequestParam String env) {
+    public BaseResponse<String> countProgram (@RequestParam String code, @RequestParam String env) {
         try {
-            // validation : id는 1~6
-            if(id<1 && id>6){
-                throw new BaseException(INVALID_PROGRAM_ID);
+            // validation : 6개의 정답
+            if(code.length()!=6){
+                throw new BaseException(REQUEST_ERROR);
             }
-            storyService.countProgram(id, env);
             StoryAlgorithm storyAlgorithm = new StoryAlgorithm();
-            String programName = storyAlgorithm.getProgram()[id-1].getName();
+            int programId = storyAlgorithm.calculateResult(code, 6);
+            storyService.countProgram(programId, env);
+            String programName = storyAlgorithm.getProgram()[programId-1].getName();
             String resultMessage = programName + " 카운트가 업데이트되었습니다.";
             return new BaseResponse<>(resultMessage);
         } catch (BaseException exception){

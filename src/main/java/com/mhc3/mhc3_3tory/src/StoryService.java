@@ -38,7 +38,11 @@ public class StoryService {
     }
     public void countProgram(int id, String env) throws BaseException {
         try {
-            storyDao.updateCount(id, env);
+            if(env.equals("dev")) {
+                storyDao.updateCountForDev(id);
+            } else {
+                storyDao.updateCount(id);
+            }
         } catch (BaseException exception) {
             throw exception;
         }

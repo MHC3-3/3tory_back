@@ -87,12 +87,21 @@ public class StoryDao {
         }
     }
 
-    public void updateCount(int programId, String env) throws BaseException {
+    public void updateCount(int programId) throws BaseException {
         try {
             String updateCountQuery = "UPDATE Programs SET Programs.count = (SELECT * FROM (SELECT p.count FROM Programs as p WHERE p.id =?) as a)+1 WHERE Programs.id =?;";
-            if(env.equals("dev")){
-                updateCountQuery = "UPDATE Programs SET Programs.count_dev = (SELECT * FROM (SELECT p.count_dev FROM Programs as p WHERE p.id =?) as a)+1 WHERE Programs.id =?;";
-            }
+
+            Object[] updateCountParams = new Object[]{programId,programId};
+            this.jdbcTemplate.update(updateCountQuery, updateCountParams);
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            throw new BaseException(DATABASE_ERROR);
+        }
+    }
+
+    public void updateCountForDev(int programId) throws BaseException {
+        try {
+            String updateCountQuery = "UPDATE Programs SET Programs.count_dev = (SELECT * FROM (SELECT p.count_dev FROM Programs as p WHERE p.id =?) as a)+1 WHERE Programs.id =?;";
 
             Object[] updateCountParams = new Object[]{programId,programId};
             this.jdbcTemplate.update(updateCountQuery, updateCountParams);
