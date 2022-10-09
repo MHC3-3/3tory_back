@@ -20,6 +20,8 @@ public enum BaseResponseStatus {
     INVALID_ANSWER_Q4(false,2014,"Q4에 입력가능한 답안은 1,2 입니다."),
     INVALID_ANSWER_Q5(false,2015,"Q5에 입력가능한 답안은 1,2,3 입니다."),
     INVALID_ANSWER_Q6(false,2016,"Q6에 입력가능한 답안은 1,2 입니다."),
+    INVALID_PROGRAM_ID(false, 2020, "프로그램 ID값을 확인해주세요"),
+    INVALID_PHONE_NUMBER(false, 2030, "유효하지 않은 전화번호입니다."),
 
     /**
      * 4000 : Database, Server오류
