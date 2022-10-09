@@ -4,6 +4,8 @@ import com.mhc3.mhc3_3tory.config.exception.BaseException;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 import static com.mhc3.mhc3_3tory.config.response.BaseResponseStatus.*;
 
 @Service
@@ -11,7 +13,11 @@ import static com.mhc3.mhc3_3tory.config.response.BaseResponseStatus.*;
 public class StoryAlgorithm {
     // 프로그램 점수
     Program[] program = new Program[6];
+
+    // 질문별 가중치
     float[] weight = {1.2f,1.4f,1.7f,4.0f,2.0f,3.0f};
+    int resultNumber = 0;
+    ArrayList<String> resultCase = new ArrayList<>();;
     public StoryAlgorithm(){
         program[0] = new Program(1,"barista");
         program[1] = new Program(2,"nanta");
@@ -20,8 +26,12 @@ public class StoryAlgorithm {
         program[4] = new Program(5,"dance");
         program[5] = new Program(6,"popArt");
     }
-    // 질문별 가중치
 
+    void initProgram() {
+        for(int i=0;i<6;i++) {
+            this.program[i].initProgram();
+        }
+    }
     public int calculateResult(String answerCode, int questionCnt) throws BaseException {
         try {
             for (int i = 1; i <= questionCnt; i++) {
@@ -34,7 +44,6 @@ public class StoryAlgorithm {
             };
             // bestProgram 계산
             int bestProgramId = whatIsBestProgram(scores);
-            System.out.println(bestProgramId);
             return whatIsBestProgram(scores);
         } catch (BaseException exception) {
             throw exception;
@@ -200,6 +209,39 @@ public class StoryAlgorithm {
             }
         }
         return programId;
+    }
+
+    public void numberOfCases(String before, int end, int questionCnt, int[] answerCnt) {
+        if (end == 0) {
+            // 각 경우의 수 출력될 때마다 질문에 대한 점수결과값도 출력
+            String result = before;
+            resultNumber++;
+//            System.out.print(String.format("%03d", resultNumber) + " | " + result + "  |  ");
+            this.resultCase.add(result);
+            try {
+                initProgram();
+                int p = calculateResult(result, questionCnt);
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            return;
+        }
+        end--;
+
+        for (int i = 1; i <= answerCnt[questionCnt - end - 1]; i++) {
+            // 현재 답변이 i일 때
+            if (before.length() < questionCnt - end) {
+                before = before + i;
+            } else {
+                StringBuilder sb = new StringBuilder(before);
+                char digit = Character.forDigit(i, 10);
+                sb.setCharAt(questionCnt - end - 1, digit);
+                before = sb.toString();
+            }
+            numberOfCases(before, end, questionCnt, answerCnt);
+        }
+
     }
 
 }

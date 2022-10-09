@@ -16,6 +16,9 @@ public class Program {
         this.score = 0.0f;
     }
 
+    void initProgram() {
+        this.score = 0.0f;
+    }
     void addScore(float weight) {
         this.score = this.score + weight;
     }
